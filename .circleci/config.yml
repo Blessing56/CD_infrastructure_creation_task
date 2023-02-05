@@ -32,7 +32,7 @@ jobs:
       - run:
           name: Run Playbook and configure server
           command: |
-            ansible-playbook -i [inventory-file] [playbook-file]
+            ansible-playbook -i [inventory.txt] [roles]
 
 
 workflows:
