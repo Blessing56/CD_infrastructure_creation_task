@@ -78,4 +78,4 @@ workflows:
       - create_infrastructure
       #- configure_infrastructure
       #- smoke_test
-      - smoke_test1
+      - smoke_test2
