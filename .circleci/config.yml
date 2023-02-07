@@ -68,7 +68,6 @@ jobs:
           # fail the job intentionally to stimulate an error
           command: return 1
       - destroy_environment
-        when: on_fail
         
 
 
