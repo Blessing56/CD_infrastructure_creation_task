@@ -67,7 +67,7 @@ jobs:
           name: Test job
           # fail the job intentionally to stimulate an error
           command: return 1
-      - destroy_environment:
+      - destroy_environment
         when: on_fail
         
 
