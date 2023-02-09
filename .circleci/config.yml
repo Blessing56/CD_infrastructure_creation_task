@@ -62,7 +62,7 @@ jobs:
 
   smoke_test2:
     docker:
-      - image: alpine/latest
+      - image: alpine:latest
     steps:
       - run: apk add --update aws-cli #to support aws commands on the apline image
       - run:
