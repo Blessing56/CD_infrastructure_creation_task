@@ -1,2 +1,3 @@
 [all]
-54.236.35.142
+// aws ec2 describe-instances --query 'Reservations[*].Instances[*].PublicIpAddress' --filters "Name=tag:Project,Values=udacity" --output text >> inventory
+jjj
