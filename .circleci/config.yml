@@ -19,7 +19,6 @@ jobs:
       - image: amazon/aws-cli
     steps:
       - checkout
-      - run: apk add --update aws-cli
       - run:
           name: Create Cloudformation Stack
           command: |
@@ -65,6 +64,7 @@ jobs:
     docker:
       - image: alpine:latest
     steps:
+      - run: apk add --update aws-cli
       - run:
           name: Test job
           # fail the job intentionally to stimulate an error
