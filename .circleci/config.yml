@@ -19,6 +19,7 @@ jobs:
       - image: amazon/aws-cli
     steps:
       - checkout
+      - run: apk add --update aws-cli
       - run:
           name: Create Cloudformation Stack
           command: |
