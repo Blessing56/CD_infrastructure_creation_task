@@ -12,7 +12,7 @@ commands:
           name: Destroy environment
           when: on_fail
           command: |
-            aws cloudformation delete-stack --stack-name myStack-${CIRCLE_WORKFLOW_ID:0:7}
+            aws cloudformation delete-stack --stack-name myStack-${CIRCLE_WORKFLOW_ID:0:5}
 jobs:
   create_infrastructure:
     docker:
@@ -62,9 +62,9 @@ jobs:
 
   smoke_test2:
     docker:
-      - image: amazon/aws-cli
+      - image: apline/latest
     steps:
-      #- run: apk add --update aws-cli
+      - run: apk add --update aws-cli #to support aws commands on the apline image
       - run:
           name: Test job
           # fail the job intentionally to stimulate an error
