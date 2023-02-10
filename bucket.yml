@@ -1,6 +1,6 @@
 Parameters:
   # New Bucket name
-  MyBucketName:
+  MyBucketName: blessbucket2
     Description: Existing Bucket name
     Type: String
 
