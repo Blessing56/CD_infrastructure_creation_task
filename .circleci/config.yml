@@ -57,7 +57,7 @@ jobs:
             --stack-name stack-create-bucket-${CIRCLE_WORKFLOW_ID:0:5} \
             --parameter-overrides MyBucketName="mybucket-${CIRCLE_WORKFLOW_ID:0:5}"
       # Uncomment the step below if yoou wish to upload all contents of the current directory to the S3 bucket
-      - run: aws s3 sync . s3://mybucket-${CIRCLE_WORKFLOW_ID:0:5} --delete
+      - run: aws s3 sync . s3://blessbucket --delete
   
   # Fetch and save the pipeline ID (bucket ID) responsible for the last release....
 
@@ -108,8 +108,8 @@ jobs:
           # Use $OldBucketID environment variable or mybucket644752792305 below.
           # Similarly, you can create and use $OldStackID environment variable in place of production-distro 
           command: |
-            export OldStackID=$(cat ~/textfile.txt)
-            aws s3 rm "s3://$OldStackID" --recursive
+            export blessbucket=$(cat ~/textfile.txt)
+            aws s3 rm "s3://blessbucket" --recursive
   
   
   smoke_test:
