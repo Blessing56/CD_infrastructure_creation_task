@@ -108,8 +108,8 @@ jobs:
           # Use $OldBucketID environment variable or mybucket644752792305 below.
           # Similarly, you can create and use $OldStackID environment variable in place of production-distro 
           command: |
-            export blessbucket=$(cat ~/textfile.txt)
-            aws s3 rm "s3://blessbucket" --recursive
+            export $OldStackID=$(cat ~/textfile.txt)
+            aws s3 rm "s3://$OldStackID" --recursive
   
   
   smoke_test:
